@@ -1,0 +1,14 @@
+<div>
+  <h2>Editando Notícia</h2>
+  <form (ngSubmit)="submit()" [formGroup]="postEditForm">
+    <select formControlName="category">
+      <option value="politica">Política</option>
+      <option value="fofoca">Fofoca</option>
+      <option value="educacao">Educação</option>
+      <option value="tecnologia">Tecnologia</option>
+    </select>
+    <input type="text" placeholder="Título" formControlName="title" />
+    <textarea placeholder="Conteúdo" formControlName="content"></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</div>

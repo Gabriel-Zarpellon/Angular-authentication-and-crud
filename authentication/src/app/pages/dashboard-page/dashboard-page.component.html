@@ -1,0 +1,20 @@
+<app-private-route>
+  <main>
+    <div>
+      <p>{{ user?.name }} - {{ user?.job }}</p>
+      <p>{{ user?.email }}</p>
+      <button (click)="handleLogout()">Sair</button>
+    </div>
+    <app-post-create-form />
+    <ul *ngIf="postList.length > 0">
+      <li *ngFor="let post of postList">
+        <h3>{{ post.title }} - {{ post.author }}</h3>
+        <p>{{ post.content }}</p>
+        <button (click)="handleEdit(post)">Editar</button>
+        <button (click)="handleRemove(post.id)">Remover</button>
+      </li>
+    </ul>
+    <p *ngIf="postList.length === 0">Cadastre a primeira notícia.</p>
+    <app-post-edit-form *ngIf="editingPost" />
+  </main>
+</app-private-route>
